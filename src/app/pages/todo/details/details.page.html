@@ -1,0 +1,17 @@
+<ion-header>
+  <ion-toolbar color="secondary">
+    <ion-title>Detalhes</ion-title>
+    <ion-buttons slot="start" color="secondary">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card *ngIf="todo">
+    <ion-card-header>
+      <ion-card-title>{{todo.name}}</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>{{todo.description}}</ion-card-content>
+  </ion-card>
+</ion-content>

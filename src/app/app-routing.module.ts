@@ -2,19 +2,10 @@ import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
-  {
-    path: '',
-    redirectTo: 'home',
-    pathMatch: 'full'
-  },
-  {
-    path: 'home',
-    loadChildren: './home/home.module#HomePageModule'
-  },
-  { path: 'list', loadChildren: './todo/list/list.module#ListPageModule' },
-  { path: 'create-update', loadChildren: './todo/create-update/create-update.module#CreateUpdatePageModule' },
-  { path: 'create-update/:id', loadChildren: './todo/create-update/create-update.module#CreateUpdatePageModule' },
-  { path: 'details/:id', loadChildren: './todo/details/details.module#DetailsPageModule' }
+  { path: '', redirectTo: 'list', pathMatch: 'full' },
+  { path: 'list', loadChildren: './pages/todo/list/list.module#ListPageModule' },
+  { path: 'create-update', loadChildren: './pages/todo/create-update/create-update.module#CreateUpdatePageModule' },
+  { path: 'details', loadChildren: './pages/todo/details/details.module#DetailsPageModule' },
 ];
 
 @NgModule({
@@ -23,4 +14,4 @@ const routes: Routes = [
   ],
   exports: [RouterModule]
 })
-export class AppRoutingModule {}
+export class AppRoutingModule { }

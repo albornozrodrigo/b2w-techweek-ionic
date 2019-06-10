@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-toolbar color="secondary">
+    <ion-title>To-Do List</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item-sliding *ngFor="let item of list">  
+      <ion-item>
+        <ion-label>{{item.name}}</ion-label>
+        <ion-checkbox slot="end" [(ngModel)]="item.checked" (click)="update(item)"></ion-checkbox>
+      </ion-item>
+  
+      <ion-item-options side="end">
+        <ion-item-option color="primary" (click)="details(item.id)">Detalhes</ion-item-option>
+        <ion-item-option color="warning" (click)="edit(item.id)">Editar</ion-item-option>
+        <ion-item-option color="danger" (click)="remove(item.id)">Remover</ion-item-option>
+      </ion-item-options>
+    </ion-item-sliding>
+  </ion-list>
+
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button routerLink="/create-update" color="secondary">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+</ion-content>
